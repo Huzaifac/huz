@@ -1,0 +1,50 @@
+import random
+print ("Snake Water Gun")
+print ("Press\ns for snake\ng for gun\nw for water ")
+lst=["s","w","g"]
+yous=0
+reals=0
+total_chances=7
+chance=0
+while (chance<total_chances):
+  you=input("s,w,g:")
+  realme=random.choice(lst)
+  if you==realme :
+    print ("Ohh!!Both choose same ")
+  elif you=="w" and realme=="s":
+    yous=yous+1
+    print ("You win\nRealme choose snake")
+    print("Your score is",yous)
+  elif you=="s" and realme=="w":
+    reals=reals+1
+    print ("You loose\nRealme choose water")
+    print ("Realme score is", reals)
+  elif you=="g" and realme=="w":
+    reals=reals+1
+    print ("You loose\nRealme choose water")
+    print ("Realme score is",reals)
+  elif you=="w" and realme=="g":
+    yous=yous+1 
+    print ("You win\nRealme choose gun")
+    print ("Your score is",yous)
+  elif you=="g" and realme=="s":
+    yous=yous+1
+    print ("You won\nRealme choose snake")
+    print ("your score is",yous)
+  elif you=="s" and realme=="g":
+    reals=reals+1
+    print ("You loose\nRealme choose gun ")
+    print ("Realme score is ",reals)
+  else:
+    print ("Wrong input")
+  chance=chance+1
+  print (total_chances-chance,"no of chances are left")
+print ("Game Over")
+print ("Your score is",yous)
+print ("Realme score is",reals)
+if yous==reals:
+  print (" game tie")
+elif yous<reals:
+  print ("Realme won the game!!!")
+else:
+  print ("You won the game!!!")
